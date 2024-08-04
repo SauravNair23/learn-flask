@@ -11,16 +11,24 @@
       #banner {
         height: 360px;
         width: 100%;
+        margin-bottom: 16px;
       }
     </style>
 
   </head>
   <body>
+    {% include 'nav.html' %}
+    <img class='img-fluid' id="banner" src="static/Banner.jpg">
     <div class = 'container'>
       <h1 class='text-center mt-2 mb-4'>{{company_name}} Carrers</h1>
-      <img class='img-fluid' id="banner" src="static/Banner.jpg">
-      <h2 class='text-center mt-2 mb-4'>About {{company_name}} Carrers</h2>
+    <div class='row' style="margin-bottom:28px;">
+      <div class='col-md-6'>
       <p class='lead'>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In dolor lectus, ultrices dapibus consectetur at, aliquam nec orci. Fusce sodales, ante a tincidunt tempus, purus tellus lobortis mauris, ac bibendum elit quam ac orci. Nullam vitae massa a mauris hendrerit luctus in eget sapien. Aliquam sollicitudin maximus molestie. Sed ac ex quis leo mollis aliquam. Praesent molestie sagittis elit nec viverra. Vivamus porttitor neque id lectus efficitur, nec ornare massa consequat. Aliquam erat volutpat. Nunc convallis malesuada sollicitudin. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum molestie mattis velit, ut sollicitudin ante dignissim in. Integer accumsan sed odio nec pharetra. Duis hendrerit finibus ex, quis tristique nibh condimentum finibus.</p>
+      </div>
+      <div class='d-none d-md-block col-md-6'>
+      <img src="static/Solutions.jpg" style="height:420px;border-radius:4px;">
+      </div>
+    </div>
       <h2 class='text-center mt-2 mb-4'>Open Positions</h2>
       <p>
         {% for job in jobs %}
@@ -28,9 +36,9 @@
         {% endfor %}
       </p>
       <div class='text-center'>
-      <button class="btn btn-primary btn-lg">Contact Us</button>
-      <p class='mt-4'>Copyright 2024</p>
+      <a href="mailto:testflask@testflask.com?subject=Questions%20for%20Job%20Openings" class="btn btn-primary btn-lg">Contact Us</a>
       </div>
     </div>
+    {% include 'footer.html' %}
   </body>
 </html>  
